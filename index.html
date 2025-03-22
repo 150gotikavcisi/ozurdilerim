@@ -4,10 +4,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>..</title>
+      <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            margin-top: 50px;
+        }
+        button {
+            font-size: 18px;
+            padding: 10px 20px;
+            margin: 10px;
+            cursor: pointer;
+        }
+      </style>
 </head>
 <body>
-    <h>Aşırı özlüyorum cok ciddiyim cok ihtiyacim var sana hersey icin ozur dilerim bir gun bana kizmadan konussan keske hep baska erkekleri savundugun icin cok kiskaniyorum senle konusurken ister istemez salaklastigim icinde ozur dilerim aslinda beni olgunlastirabilecek kisi sensin</h>
-    <button onclick="window.location.href='index.html'">buraya bas muzik calsin</button>
-    
+    <h>Aşırı özlüyorum cok ciddiyim cok ihtiyacim var sana hersey icin ozur dilerim bir gun bana kizmadan konussan keske hep baska erkekleri savundugun icin cok kiskaniyorum senle konusurken ister istemez salaklastigim icinde ozur dilerim aslinda beni olgunlastirabilecek kisi sensin hic birseyim yokken yanimda sen vardin senle konusuyordum suandada hic birseyim yok zaten of artik daha ne kadar daha yalvariyim ne anlatiyim neyim varsa yoksa sendin bu kadar seni istedigim icin ve baglandigim ici ozur dilerim </h>
+    <audio id="muzik">
+        <source src="muzik.mp3" type="audio/mpeg">
+        Tarayıcınız ses dosyasını desteklemiyor.
+    </audio>
+
+    <!-- Başlat ve Durdur Butonları -->
+    <button onclick="muzikCal()">Muzigi baslat</button>
+    <button onclick="muzikDurdur()">Durdur</button>
+
+    <script>
+        var muzik = document.getElementById("muzik");
+
+        function muzikCal() {
+            muzik.play();
+        }
+
+        function muzikDurdur() {
+            muzik.pause();
+            muzik.currentTime = 0; // Baştan başlatmak için
+        }
+    </script>
+
 </body>
 </html>
