@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>.</title>
+    <script>
+        // Eğer yetkili değilse giriş sayfasına yönlendir
+        if (localStorage.getItem("yetkili") !== "true") {
+            window.location.href = "index.html";
+        }
+    </script>
+</head>
+<body>
+    <h2>Hop!</h2>
+    <p>Bu sayfa sadece değerlim icindir.</p>
+    <button onclick="cikisYap()">ana ekran</button>
+
+    <script>
+        function cikisYap() {
+            localStorage.removeItem("yetkili"); // Yetkiyi sil
+            window.location.href = "index.html"; // Giriş sayfasına at
+        }
+    </script>
+</body>
+  </html>
