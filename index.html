@@ -3,44 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>..</title>
-      <style>
-        body {
-            text-align: center;
-            font-family: Arial, sans-serif;
-            margin-top: 50px;
-        }
-        button {
-            font-size: 18px;
-            padding: 10px 20px;
-            margin: 10px;
-            cursor: pointer;
-        }
-      </style>
+    <title>Giriş</title>
 </head>
 <body>
-    <h>Kalbim seni unutacak kadar adiyse, ellerim onu parçalayacak kadar asildir.</h>
-    <audio id="muzik">
-        <source src="Bir Polar Ve Bipolar.mp3" type="audio/mpeg">
-        Tarayıcınız ses dosyasını desteklemiyor.
-    </audio>
-
-    <!-- Başlat ve Durdur Butonları -->
-    <button onclick="muzikCal()">Bir Polar Ve "Bipolar"</button>
-    <button onclick="muzikDurdur()">durdur.</button>
+    <h2>Hosgeldin, ilk once sifreyi girmelisin.
+    İpucu: ilk gmailine girdigim zamanki sifren.</h2>
+    <input type="password" id="sifreInput" placeholder="Şifreyi girin">
+    <button onclick="kontrolEt()">Beni iceri al</button>
 
     <script>
-        var muzik = document.getElementById("muzik");
-
-        function muzikCal() {
-            muzik.play();
-        }
-
-        function muzikDurdur() {
-            muzik.pause();
-            muzik.currentTime = 0; // Baştan başlatmak için
+        function kontrolEt() {
+            const sifre = document.getElementById("sifreInput").value;
+            if (sifre === "1907nk1907") {
+                localStorage.setItem("yetkili", "true"); // Yetkiyi sakla
+                window.location.href = "gunluk.html"; // Sayfaya yönlendir
+            } else {
+                alert("Bilemedin.");
+            }
         }
     </script>
-
 </body>
 </html>
