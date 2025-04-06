@@ -6,21 +6,6 @@
     <title>Giriş</title>
 </head>
 <body>
-    <h2>Hosgeldin, ilk once sifreyi girmelisin.
-    İpucu: ilk gmailine girdigim zamanki sifren.</h2>
-    <input type="password" id="sifreInput" placeholder="Şifreyi girin">
-    <button onclick="kontrolEt()">Beni iceri al</button>
-
-    <script>
-        function kontrolEt() {
-            const sifre = document.getElementById("sifreInput").value;
-            if (sifre === "1907nk1907") {
-                localStorage.setItem("yetkili", "true"); // Yetkiyi sakla
-                window.location.href = "gunluk.html"; // Sayfaya yönlendir
-            } else {
-                alert("Bilemedin.");
-            }
-        }
-    </script>
+    <p>Arasana</p>
 </body>
 </html>
