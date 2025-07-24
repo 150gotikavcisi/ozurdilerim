@@ -82,15 +82,29 @@
 
   <script>
     function checkPassword() {
-      const correctPassword = "432620";
       const userInput = document.getElementById("password").value;
       const errorMsg = document.getElementById("errorMessage");
 
-      if (userInput === correctPassword) {
-        window.location.href = "https://ornek-site.com/giris-basarili"; // Yönlendirme adresi
-      } else {
-        errorMsg.style.display = "block";
-      }
+      fetch("http://localhost:3000/kontrol", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ sifre: userInput }),
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          if (data.dogru) {
+            window.location.href = "https://ornek-site.com/giris-basarili";
+          } else {
+            errorMsg.style.display = "block";
+          }
+        })
+        .catch((err) => {
+          console.error("Sunucuya ulaşılamadı:", err);
+          errorMsg.textContent = "Sunucu hatası oluştu. Lütfen daha sonra tekrar deneyin.";
+          errorMsg.style.display = "block";
+        });
     }
   </script>
 </body>
