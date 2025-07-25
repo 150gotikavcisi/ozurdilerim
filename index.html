@@ -81,6 +81,11 @@
   </div>
 
   <script>
+    
+  // Şifre kontrolü: Eğer "giris" localStorage'da yoksa giriş sayfasına at
+  if (localStorage.getItem("giris") !== "ok") {
+    window.location.href = "index.html";
+    }
     function checkPassword() {
       const correctPassword = "432620";
       const userInput = document.getElementById("password").value;
