@@ -19,5 +19,18 @@
   -webkit-user-select: none;
   -moz-user-select: none;
     }
+
+  // Sağ tıklamayı engelle
+  document.addEventListener('contextmenu', function (e) {
+    e.preventDefault();
+  });
+
+  // Klavye ile kopyalamayı engelle (Ctrl+C vs.)
+  document.addEventListener('keydown', function (e) {
+    if ((e.ctrlKey || e.metaKey) && (e.key === 'c' || e.key === 'x' || e.key === 'a')) {
+      e.preventDefault();
+    }
+  });
+
   </script>
 </html>
