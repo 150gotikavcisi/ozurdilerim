@@ -79,9 +79,11 @@
     <button onclick="checkPassword()">Yönlendir</button>
     <div class="error" id="errorMessage">Yanlış şifre. Tekrar deneyin.</div>
   </div>
-
+<audio autoplay loop hidden>
+  <source src="Ruhum Girdi Bir Çıkmaza - Perdenin Ardındakiler & Beyza Başak [RX5Hu_hwI30].mp3" type="audio/mpeg">
+</audio>
   <script>
-    function checkPassword() {
+  function checkPassword() {
       const correctPassword = "432620";
       const userInput = document.getElementById("password").value;
       const errorMsg = document.getElementById("errorMessage");
